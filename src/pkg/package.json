@@ -1,0 +1,15 @@
+{
+  "name": "use-md-template",
+  "collaborators": [
+    "hearsay316 <qazwsx2228@163.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "use_md_template_bg.wasm",
+    "use_md_template.js",
+    "use_md_template.d.ts"
+  ],
+  "module": "use_md_template.js",
+  "types": "use_md_template.d.ts",
+  "sideEffects": false
+}
