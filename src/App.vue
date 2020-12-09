@@ -1,17 +1,36 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <textarea v-model="usertextarea">
+
+    </textarea>
+    <p v-html='userWasm'></p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      usertextarea:'#  dwdwd',
+      userWasm:''
+    }
+  },
+  watch:{
+    usertextarea(value){
+      import('./pkg').then(wasm=>{
+       this.userWasm =  wasm.greet(value)
+      })
+    }
+  },
+  mounted() {
+    import('./pkg').then(wasm=>{
+      console.log(wasm.greet(this.usertextarea),wasm);
+    })
+  },
+  computed:{
   }
 }
 </script>
